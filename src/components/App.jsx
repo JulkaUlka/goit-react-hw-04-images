@@ -1,5 +1,5 @@
 import { Loader } from 'components/Loader/Loader';
-import { Modal } from 'components/Modal/Modal';
+// import { Modal } from 'components/Modal/Modal';
 import { ImageGallery } from 'components/ImageGallery/ImageGallery';
 import { ImageGalleryItem } from './ImageGalleryItem/ImageGalleryItem';
 import { Button } from './Button/Button';
@@ -23,8 +23,7 @@ export class App extends Component {
     if (prevState.query !== query || prevState.page !== page) {
       this.setState({ isLoading: true });
       try {
-        const {
-          total,
+        const {          
           totalHits,
           hits: photos,
         } = await fetchPhotosByQuery(query, page);
