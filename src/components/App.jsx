@@ -11,7 +11,7 @@ import { AppBlock } from './App.styled';
 export function App() {
   const [photos, setPhotos] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error,setError] = useState('');
+  const [error, setError] = useState('');
   const [page, setPage] = useState(1);
   const [showLoadMore, setShowLoadMore] = useState(false);
   const [query, setQuery] = useState('');
@@ -52,7 +52,7 @@ export function App() {
   };
 
   const handleLoadMore = () => {
-    setPage(prevState => prevState + 1);   
+    setPage(prevState => prevState + 1);
   };
 
   const toggleModal = () => {
