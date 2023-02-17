@@ -4,17 +4,17 @@ import { ModalBlock, Overlay } from './Modal.styled';
 
 export function Modal({ onClose, selectedImage }) {
   useEffect(() => {
+    const handleKeydown = e => {
+      if (e.code === 'Escape') {
+        onClose();
+      }
+    };
     window.addEventListener('keydown', handleKeydown);
     return () => {
       window.removeEventListener('keydown', handleKeydown);
     };
-  });
+  }, [onClose]);
 
-  const handleKeydown = e => {
-    if (e.code === 'Escape') {
-      onClose();
-    }
-  };
   const handleBackDrop = e => {
     if (e.target === e.currentTarget) {
       onClose();
